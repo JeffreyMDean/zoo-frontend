@@ -21,14 +21,14 @@ export default {
   },
   methods: {
     handleIndexZoos: function () {
-      axios.get("http://localhost:3000/zoos.json").then((response) => {
+      axios.get("http://localhost:5000/animals.json").then((response) => {
         console.log("zoos index", response);
         this.zoos = response.data;
       });
     },
     handleCreateZoo: function (params) {
       axios
-      .post("http://localhost:3000/zoos.json", params)
+      .post("http://localhost:5000/animals.json", params)
       .then((response) => {
         console.log("zoos create", response);
         this.zoos.push(response.data);
