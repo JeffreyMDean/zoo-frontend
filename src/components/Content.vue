@@ -27,8 +27,15 @@ export default {
       });
     },
     handleCreateZoo: function (params) {
+      const formData = new FormData();
+      formData.append('name', params.name);
+      formData.append('description', params.description);
+      formData.append('image', params.imageURL);
+      console.log(formData);
+      
       axios
-      .post("http://localhost:5000/animals.json", params)
+      .post("http://localhost:5000/animals.json", formData
+      )
       .then((response) => {
         console.log("zoos create", response);
         this.zoos.push(response.data);
