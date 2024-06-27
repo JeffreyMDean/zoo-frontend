@@ -50,7 +50,7 @@ export default {
       });
     },
     handleShowZoo: function (zoo) {
-      console.log("handleShowPhoto", zoo);
+      console.log("handleShowzoo", zoo);
       this.currentZoo = zoo;
       this.isZoosShowVisible = true;
     },
