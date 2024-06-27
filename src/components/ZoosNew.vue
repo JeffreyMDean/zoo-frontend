@@ -7,6 +7,7 @@ export default {
   },
   methods: {
     handleSubmit: function () {
+      console.log(this.newZooParams)
       this.$emit("createZoo", this.newZooParams);
       this.newZooParams = {};
     },
@@ -28,7 +29,7 @@ export default {
       </div>
       <div>
         Image:
-        <input type="url" v-model="newZooParams.imageURL" />
+        <input type="url" v-model="newZooParams.image" />
       </div>
       <button type="submit">Create zoo</button>
     </form>

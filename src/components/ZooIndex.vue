@@ -12,7 +12,7 @@ export default {
     <div v-for="zoo in zoos" v-bind:key="zoo.id">
       <h2>{{ zoo.name }}</h2>
       <p>{{ zoo.description }}</p>
-      <img v-bind:src="zoo.url" />
+      <img v-bind:src= zoo.image />
       <button v-on:click="$emit('showZoo', zoo)">More info</button>
     </div>
   </div>

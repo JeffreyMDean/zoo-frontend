@@ -15,8 +15,7 @@ export default {
   data: function () {
       return {
         zoos: [
-        { id: 3, name: "Leopard", description: "spotted cat", image: "https://via.placeholder.com/150"},
-        { id: 4, name: "Panther", description: "dark cat", image: "https://via.placeholder.com/300"},
+        
       ],
       currentZoo: {},
       isZoosShowVisible: false,
@@ -28,16 +27,22 @@ export default {
   },
   methods: {
     handleIndexZoos: function () {
-      axios.get("http://localhost:5000/zoos.json").then((response) => {
+      axios.get("http://localhost:5000/animals.json").then((response) => {
         console.log("zoos index", response);
         this.zoos = response.data;
       });
     },
     handleCreateZoo: function (params) {
+      const formData = new FormData();
+      formData.append('name', params.name);
+      formData.append('description', params.description);
+      formData.append('image', params.image);
+      console.log(formData);
       axios
-      .post("http://localhost:5000/zoos.json", params)
+      .post("http://localhost:5000/animals.json", formData)
       .then((response) => {
-        console.log("zoos create", response);
+        
+        console.log("zoos create", response.data);
         this.zoos.push(response.data);
       })
       .catch((error) => {
