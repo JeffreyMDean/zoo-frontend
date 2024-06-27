@@ -1,3 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background-color: #E8EBEF;
+}
+
+img {
+  max-width: 300px;
+  border-radius: 25px;
+  border: 2px solid rgb(240, 240, 240);
+  box-shadow: 0 0 6px rgb(201, 201, 201);
+
+  &:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+  }
+}
