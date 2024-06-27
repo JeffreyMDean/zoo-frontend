@@ -13,6 +13,7 @@ export default {
       <h2>{{ zoo.name }}</h2>
       <p>{{ zoo.description }}</p>
       <img v-bind:src="zoo.url" />
+      <button v-on:click="$emit('showZoo', zoo)">More info</button>
     </div>
   </div>
 </template>
